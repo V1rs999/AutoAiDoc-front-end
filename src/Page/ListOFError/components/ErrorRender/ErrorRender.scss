@@ -1,0 +1,31 @@
+.List-item{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .Item-content{
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    min-width: 100%;
+    min-height: 50px;
+    border-bottom: rgba(255, 255, 255, 0.52) solid 1px;
+    border-top: rgba(255, 255, 255, 0.52) solid 1px;
+  }
+
+}
+.descriptionOfError{
+  display: flex;
+  flex-grow: 1;
+  margin-left: 107px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 200;
+}
+.squreButt{
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.codeOfError{
+  min-width: 65px;
+}

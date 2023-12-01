@@ -1,0 +1,28 @@
+.instruction-modal {
+  z-index: 1;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  body{
+    background: rgba(0, 0, 0, 0.15);
+  }
+  backdrop-filter: blur(20px);
+}
+
+.instruction-modal-content{
+  left: 20%;
+  top: -13%;
+  z-index: 1;
+  position: fixed;
+  padding: 1rem;
+  border-radius: 15px;
+}
+.instruction-modal-content-close {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  position: fixed;
+  top: 2%;
+  right: 25%;
+  cursor: pointer;
+}
+

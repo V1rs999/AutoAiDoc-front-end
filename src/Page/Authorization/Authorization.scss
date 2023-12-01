@@ -1,0 +1,213 @@
+.authorization{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-area: main;
+  gap: 10px;
+  background: #000;
+}
+
+.authorization-credentials {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  width: 343px;
+}
+
+.title {
+  display: flex;
+  color: #00ADB5;
+
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.description {
+  color: #999;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.authorization-form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.authorization-div{
+  padding: 20px;
+  background: #222831;
+  border-radius: 10px ;
+  filter: drop-shadow(0px 4px 4px #000);
+}
+.authorization-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 343px;
+  height: 450px;
+}
+
+.form-input {
+  margin-bottom: 5px;
+
+}
+
+
+.form-password {
+}
+
+.form-input-password, .form-email-input {
+  border-radius: 10px;
+  border: 2px solid #000000;
+  background: #F8F8F8;
+  height: 38px;
+}
+
+.form-input-password{
+
+}
+.form-password-error {
+}
+
+.authorization-form-btns {
+}
+
+.authorization-form-forgot-pass {
+}
+.forgot-pass{
+  color: #00ADB5;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.authorization-form-submitBtn {
+  border-radius: 10px;
+  background: #00ADB5;
+}
+.submitBtn{
+  display: flex;
+  width: 343px;
+  height: 58px;
+  padding: 7px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 10px;
+  background: #00ADB5;
+}
+.footer-authorization {
+}
+
+
+.authorization-form, .authorization-credentials, .alternative-conn,  .authorization-form-forgot-pass, .form-input > * {
+  margin-bottom: 10px;
+}
+.authorization-form .authorization-form-forgot-pass,
+.authorization-form .footer-authorization {
+  margin-top: 10px;
+}
+.alternative-conn{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.authorization-form-googleBtn{
+  margin: 20px auto;
+  display: flex;
+  width: 110px;
+  height: 50px;
+  padding: 7px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 10px;
+  border: 2px solid #DDD;
+  background: #F8F8F8;
+}
+.agree-politic{
+}
+.agree-politic-text{
+  width: 311px;
+  color: #999;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 162.5%;
+  margin: 20px auto;
+}
+.agree-politic-link{
+  color: #00ADB5;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+.footer-authorization{
+  display: flex;
+  justify-content: center;
+}
+.new-acc{
+  display: flex;
+  width: 393px;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+  background: #E8F3F2;
+}
+.register-butt{
+  color: #00ADB5;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+.form-email {
+
+ }
+
+.form-email-input {
+
+}
+
+.form-email-error, .form-password-error{
+  margin-left: 5px;
+}
+.error {
+  color: #999;
+  font-size: 16px;
+  font-weight: 100;
+}
+.input-error{
+  border: 1px solid #ff0000;
+  box-shadow: 1px 2px 4px rgba(255, 0, 0, 1);
+}
+#email::placeholder, #password::placeholder{
+ color: #C7C7C7;
+}
+#email{
+  background: url("../../../public/ic_outline-email (1).svg") no-repeat ;
+  background-position-x: 10px;
+  background-position-y: center;
+}
+#password{
+  background: url("../../../public/mdi_password-outline.svg") no-repeat ;
+  background-position-x: 10px;
+  background-position-y: center;
+}
+#email, #password{
+  padding-left: 40px;
+}

@@ -1,0 +1,14 @@
+.VWLine{
+  position: absolute;
+  width: 100%;
+  top: 26px;
+
+}
+.VWLine-content{
+  display: flex;
+  align-items: center;
+  &.scrolled {
+    filter: drop-shadow(0 0 5px rgb(0, 0, 0))
+  }
+}
+

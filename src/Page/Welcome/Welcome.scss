@@ -1,0 +1,49 @@
+h2{
+  font-size: 30px;
+  color: rgb(41,44,51);
+}
+span{
+  padding-left: 10px;
+}
+p{
+  color: rgb(138,138,138);
+  font-size: 20px;
+}
+.Buttons{
+  display: flex;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.join{
+  margin-top: 30px;
+  width: 645px;
+  color: #EEE;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.create-acc-butt{
+  margin-top: 30px;
+  width: 572px;
+  height: 85px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #00ADB5;
+}
+.create-acc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  height: 100%;
+}

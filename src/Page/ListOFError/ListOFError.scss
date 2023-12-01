@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.List{
+  padding: 20px;
+  width: 100%;
+  margin-top: 51px;
+  grid-area: main;
+}
+
+.codeOfError-titile, .status-titile ,.numOfError,.codeOfError, .descriptionOfError{
+  color: #FFF;
+  font-family: Inter,serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.hr{
+  border: white solid 1px;
+}
+.status-titile{
+  margin-left: 44px;
+}
+.numOfError{
+  position: fixed;
+  right: 26px;
+  color: red;
+  z-index: -1;
+}

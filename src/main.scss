@@ -1,0 +1,38 @@
+*{
+  font-family: Fire Sans,Droid Sans,Helvetica Neue, sans-serif;
+}
+html{
+  background: #222831;
+  overflow-x: hidden ;
+}
+body{
+  margin: 0 auto;
+}
+.root{
+  max-width: 1879px;
+}
+.container {
+  max-width: 1879px;
+  display: grid;
+  grid-template-areas:
+        "head head head"
+        "main main main"
+        "footer footer footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+
+}
+html::-webkit-scrollbar-thumb {
+  border-radius: 50px ;
+  background-color: #00ADB5;
+}
+
+html::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+html::-webkit-scrollbar {
+  width: 5px;
+}
+
+

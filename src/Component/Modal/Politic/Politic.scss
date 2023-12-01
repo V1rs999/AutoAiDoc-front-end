@@ -1,0 +1,64 @@
+.politic-modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0%;
+  left: 0;
+  max-width: 100%;
+  height: 100%;
+  background: #222831
+}
+
+.politic-modal-content {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  height: 100%;
+}
+.profile-content-main{
+  position: relative;
+  top: 5%;
+  margin: 5px;
+  .main-title{
+    display: inline;
+    position: relative;
+    top: -3%;
+    color: #00ADB5;
+  }
+}
+.profile-content-aside{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: #222831;
+    border-right:1px solid  #00ADB5;
+    width: 100%;
+    padding: 5px;
+    border-radius: 0;
+  .aside-section{
+    margin: 5px;
+    position: relative;
+    top: 10.5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .aside-link {
+    color: #FFFFFF;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  .aside-link:hover{
+    color: #00ADB5;
+  }
+}
+.politic-modal-content-close {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  cursor: pointer;
+}
