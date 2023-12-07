@@ -15,20 +15,6 @@ export default function ProfileModal({ onDestroy }) {
     axios.post(url).then((res) => alert(`${res.data}`));
     localStorage.clear();
   };
-  // const stored = localStorage.getItem("res data");
-  // const storedData = stored ? JSON.parse(stored) : {};
-  // const storedUsername = storedData.user || {};
-  // const username = Object.values(storedUsername).toString() || "";
-  // const storedToken = storedData.token || {};
-  // function decodeJwt(token) {
-  //   const base64Url = token.split(".")[1];
-  //   const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-  //   const rawData = atob(base64);
-  //   return JSON.parse(rawData);
-  // }
-  //
-  // const decodedToken = decodeJwt(storedToken);
-  // console.log(decodedToken);
 
   return (
     <div onClick={closeWnd} className="modal-profile">
