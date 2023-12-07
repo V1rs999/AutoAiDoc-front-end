@@ -1,4 +1,52 @@
 .dropfile{
-  margin-top: 75px;
+  background: url("../../../public/Drop file.png") no-repeat;
+  background-size: cover;
+  min-height: 939px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-area: main;
+}
+
+.drag-and-drop {
+
+}
+.drag-and-drop-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.drag-and-drop-title{
+  color: #FFF4F4;
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.drag-and-drop-border{
+  border: 2px dotted #FFF;
+  width: 80%;
+  height: 80%;
+}
+.drag-and-drop-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1040px;
+  height: 454px;
+
+  fill: linear-gradient(94deg, rgba(255, 255, 255, 0.21) -15.46%, rgba(0, 0, 0, 0.68) 111.78%);
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.19);
+  backdrop-filter: blur(10px);
+}
+
+.modal-instruction{
+  position: absolute;
+  top: 32%;
+  right: 28.5%;
 }

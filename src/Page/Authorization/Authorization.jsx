@@ -14,7 +14,7 @@ const onSubmit = async (values, actions) => {
     .post(url, values)
     .then((response) => {
       console.log("POST request successful!");
-      console.log("Response:", response.data);
+      localStorage.setItem("res data", JSON.stringify(response.data));
     })
     .catch((error) => {
       console.error("Error making POST request:", error);

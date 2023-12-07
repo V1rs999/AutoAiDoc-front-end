@@ -13,7 +13,7 @@ function ListOFError() {
         <span className="numOfError">{numOfError}</span>
         <div className="hr" />
       </div>
-      <ErrorRender output={output} />
+      <ErrorRender output={output} setnumOfError={setnumOfError} />
     </section>
   );
 }

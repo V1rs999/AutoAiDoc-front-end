@@ -37,7 +37,7 @@ function Header() {
       <div className={`header-content sticky ${scrolled ? "scrolled" : ""}`}>
         <Logo />
         <Nav />
-        <Search />
+        <Search scrolled={scrolled} />
         <Profile />
       </div>
       <VWLine scrolled={scrolled} />

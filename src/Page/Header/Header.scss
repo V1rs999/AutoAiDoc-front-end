@@ -13,7 +13,7 @@
   align-items: center;
   padding: 0  20px;
   &.scrolled {
-    z-index: 999;
+    z-index: 99;
     background-color: var(--header-bg); /* Add your desired background color here */
     transition: background-color 0.3s ease; /* Optional: Add a transition effect */
   }

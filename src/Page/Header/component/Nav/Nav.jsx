@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Nav.scss";
 export default function Nav() {
+  const scrollToFeatures = () => {
+    scroll.scrollTo("#sectionId", {
+      smooth: "easeInOutQuint",
+      duration: 1000,
+    });
+  };
   return (
     <nav className="header-nav">
       <Link className="header-link" to="/dropfile">
@@ -9,7 +15,7 @@ export default function Nav() {
       <Link className="header-link" to="/mycar">
         <span className="header-nav-item">My car</span>
       </Link>
-      <Link className="header-link" to="#">
+      <Link className="header-link" to="#" onClick={scrollToFeatures}>
         <span className="header-nav-item">Features</span>
       </Link>
       <Link className="header-link" to="/listoferror">

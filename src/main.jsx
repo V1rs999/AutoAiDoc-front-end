@@ -1,23 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./Page/Header/Header.jsx";
-import Footer from "./Page/Footer/Footer.jsx";
-import Welcome from "./Page/Welcome/Welcome.jsx";
-import ListOFError from "./Page/ListOFError/ListOFError.jsx";
-import ErrorPage from "./Page/Error/Error.jsx";
-import DropFile from "./Page/DropFile/Drop.jsx";
-import Authorization from "./Page/Authorization/Authorization.jsx";
-import Registration from "./Page/Registration/Registration.jsx";
-import "./Null.css";
-import "./main.scss";
 import {
+  Outlet,
+  Route,
+  RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-  RouterProvider,
-  Route,
-  Outlet,
   useLocation,
 } from "react-router-dom";
+import "./Null.css";
+import Authorization from "./Page/Authorization/Authorization.jsx";
+import DropFile from "./Page/DropFile/Drop.jsx";
+import ErrorPage from "./Page/Error/Error.jsx";
+import Footer from "./Page/Footer/Footer.jsx";
+import Header from "./Page/Header/Header.jsx";
+import ListOFError from "./Page/ListOFError/ListOFError.jsx";
+import Registration from "./Page/Registration/Registration.jsx";
+import Welcome from "./Page/Welcome/Welcome.jsx";
+
+import "./main.scss";
 
 const Root = () => {
   if (
