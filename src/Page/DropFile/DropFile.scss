@@ -14,9 +14,14 @@
 .drag-and-drop-div{
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
+  ul{
+    margin-top: 10px;
+    color: #FFF4F4;
+  }
 }
 .drag-and-drop-title{
   color: #FFF4F4;

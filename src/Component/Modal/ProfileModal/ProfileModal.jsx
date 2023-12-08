@@ -11,10 +11,13 @@ export default function ProfileModal({ onDestroy }) {
   };
 
   const LogOut = () => {
-    const url = "https://localhost:7189/Logout/Index";
+    const url = "https://localhost:7189/Logout";
     axios.post(url).then((res) => alert(`${res.data}`));
     localStorage.clear();
   };
+
+  const { userName: username } =
+    JSON.parse(localStorage.getItem("User Param")) || {};
 
   return (
     <div onClick={closeWnd} className="modal-profile">
@@ -22,7 +25,7 @@ export default function ProfileModal({ onDestroy }) {
         <div className="profile">
           <img className="profile-img" src={ImgProfile} alt="alt" />
           <div className="profile-circle"></div>
-          {/*<span className="profile-name">{username}</span>*/}
+          <span className="profile-name">{username}</span>
         </div>
         <div className="hr-profile"></div>
         <nav className="profile-modal-nav">

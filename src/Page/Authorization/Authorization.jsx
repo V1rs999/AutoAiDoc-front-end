@@ -1,28 +1,31 @@
 import { useState } from "react";
 import { useFormik } from "formik";
 import { AuthorizationSchema } from "../../schemas";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./Authorization.scss";
 import googleIcon from "../../../public/Google logo.svg";
 import Politic from "../../Component/Modal/Politic/Politic.jsx";
-const onSubmit = async (values, actions) => {
-  const url = "https://localhost:7189/Authorization";
-  console.log(values);
-  console.log(actions);
-  axios
-    .post(url, values)
-    .then((response) => {
-      console.log("POST request successful!");
-      localStorage.setItem("res data", JSON.stringify(response.data));
-    })
-    .catch((error) => {
-      console.error("Error making POST request:", error);
-    });
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  actions.resetForm();
-};
+
 export default function Authorization() {
+  const navigate = useNavigate();
+  const onSubmit = async (values, actions) => {
+    const url = "https://localhost:7189/Authorization";
+    console.log(values);
+    console.log(actions);
+    axios
+      .post(url, values)
+      .then((response) => {
+        console.log("POST request successful!");
+        console.log(response.data);
+        navigate(`/${response.data}`);
+      })
+      .catch((error) => {
+        console.error("Error making POST request:", error);
+      });
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm();
+  };
   const {
     values,
     errors,

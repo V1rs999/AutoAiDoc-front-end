@@ -3,9 +3,28 @@ import Slider from "./component/Slider/Slider.jsx";
 import ButtListOfError from "./component/ButtListOfError/ButtListOfError.jsx";
 import ButtAiDiagnostics from "./component/AiDiagnostics/AiDiagnostics.jsx";
 import Features from "./component/Features/Features.jsx";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React from "react";
+import axios from "axios";
 function Welcome() {
+  const LogOut = () => {
+    const url = "https://localhost:7189/Logout";
+    axios.post(url).then((res) => alert(`${res.data}`));
+    localStorage.clear();
+  };
+  const setLocal = function () {
+    const urlString = useLocation().search;
+
+    const urlParams = new URLSearchParams(urlString);
+
+    const tokenParam = urlParams.get("token");
+    const userParam = urlParams.get("user");
+
+    localStorage.setItem("Token Param", tokenParam);
+    localStorage.setItem("User Param", userParam);
+  };
+  setLocal();
+
   return (
     <div className="Main">
       <Slider />
@@ -21,7 +40,7 @@ function Welcome() {
             is today!
           </p>
         </div>
-        <Link to="/authorization" className="create-acc-butt">
+        <Link to="/authorization" className="create-acc-butt" onClick={LogOut}>
           <span className="create-acc">Open your free account today!</span>
         </Link>
       </div>

@@ -2,28 +2,29 @@ import { useFormik } from "formik";
 import { RegistrationSchema } from "../../schemas";
 import axios from "axios";
 import "./Registration.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import googleIcon from "../../../public/Google logo.svg";
 import Politic from "../../Component/Modal/Politic/Politic.jsx";
 import { useState } from "react";
 
-const onSubmit = async (values, actions) => {
-  const url = "https://localhost:7189/Registration";
-  console.log(values);
-  console.log(actions);
-  axios
-    .post(url, values)
-    .then((response) => {
-      console.log("POST request successful!");
-      console.log("Response:", response.data);
-    })
-    .catch((error) => {
-      console.error("Error making POST request:", error);
-    });
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  actions.resetForm();
-};
 export default function Registration() {
+  const navigate = useNavigate();
+  const onSubmit = async (values, actions) => {
+    const url = "https://localhost:7189/Registration";
+    console.log(values);
+    console.log(actions);
+    axios
+      .post(url, values)
+      .then((response) => {
+        console.log("Response:", response.data);
+        navigate("/authorization");
+      })
+      .catch((error) => {
+        console.error("Error making POST request:", error);
+      });
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm();
+  };
   const {
     values,
     errors,

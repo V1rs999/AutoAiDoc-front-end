@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import axios from "axios";
 const FileUpload = () => {
-  const url = "https://localhost:7189/DropFile/Index";
+  const url = "https://localhost:7189/DropFile";
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
@@ -15,12 +15,12 @@ const FileUpload = () => {
         .post(url, formData)
         .then((res) => {
           console.log(res.data);
-          console.log(formData);
         })
         .catch((error) => {
           console.error("Error uploading files:", error);
         });
     },
+    multiple: false,
   });
   return (
     <div className="drag-and-drop-div" {...getRootProps()}>
