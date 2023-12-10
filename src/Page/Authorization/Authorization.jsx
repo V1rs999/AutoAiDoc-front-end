@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFormik } from "formik";
 import { AuthorizationSchema } from "../../schemas";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Authorization.scss";
 import googleIcon from "../../../public/Google logo.svg";

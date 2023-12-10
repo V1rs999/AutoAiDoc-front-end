@@ -1,6 +1,7 @@
 import "./ProfileModal.scss";
 import ImgProfile from "../../../../public/Ellipse 4.png";
 import { Link } from "react-router-dom";
+import EditVin from "../../tools/EditVin/EditVin.jsx";
 import axios from "axios";
 
 export default function ProfileModal({ onDestroy }) {
@@ -31,7 +32,7 @@ export default function ProfileModal({ onDestroy }) {
         <nav className="profile-modal-nav">
           <h2 className="profile-modal-item">
             <Link className="profile-a" to="#">
-              Edit Vin
+              My car
             </Link>
           </h2>
           <h2 className="profile-modal-item">

@@ -112,6 +112,7 @@
 
 .authorization-form, .authorization-credentials, .alternative-conn,  .authorization-form-forgot-pass, .form-input > * {
   margin-bottom: 10px;
+
 }
 .authorization-form .authorization-form-forgot-pass,
 .authorization-form .footer-authorization {
@@ -121,6 +122,13 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
+
+  color: #999;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .authorization-form-googleBtn{
   margin: 20px auto;
