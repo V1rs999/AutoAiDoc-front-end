@@ -1,7 +1,6 @@
 import "./ProfileModal.scss";
 import ImgProfile from "../../../../public/Ellipse 4.png";
 import { Link } from "react-router-dom";
-import EditVin from "../../tools/EditVin/EditVin.jsx";
 import axios from "axios";
 
 export default function ProfileModal({ onDestroy }) {

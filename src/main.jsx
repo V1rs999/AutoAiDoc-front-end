@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./main.scss";
 import {
   Outlet,
   Route,
@@ -17,8 +18,7 @@ import Header from "./Page/Header/Header.jsx";
 import ListOFError from "./Page/ListOFError/ListOFError.jsx";
 import Registration from "./Page/Registration/Registration.jsx";
 import Welcome from "./Page/Welcome/Welcome.jsx";
-
-import "./main.scss";
+import { RequireAuth } from "./hoc/RequireAuth.jsx";
 
 const Root = () => {
   if (
@@ -47,7 +47,14 @@ const router = createBrowserRouter(
       <Route index element={<Welcome />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="/authorization" element={<Authorization />} />
-      <Route path="/dropFile" element={<DropFile />} />
+      <Route
+        path="/dropFile"
+        element={
+          <RequireAuth>
+            <DropFile />
+          </RequireAuth>
+        }
+      />
       <Route path="/listoferror" element={<ListOFError />} />
       <Route path="*" element={<ErrorPage />} />
     </Route>
