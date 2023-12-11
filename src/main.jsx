@@ -55,7 +55,14 @@ const router = createBrowserRouter(
           </RequireAuth>
         }
       />
-      <Route path="/listoferror" element={<ListOFError />} />
+      <Route
+        path="/listoferror"
+        element={
+          <RequireAuth>
+            <ListOFError />
+          </RequireAuth>
+        }
+      />
       <Route path="*" element={<ErrorPage />} />
     </Route>
   )

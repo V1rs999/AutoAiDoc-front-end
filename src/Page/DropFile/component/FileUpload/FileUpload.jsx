@@ -4,11 +4,13 @@ import { useNavigate } from "react-router-dom";
 import EditVin from "../../../../Component/tools/EditVin/EditVin.jsx";
 import axios from "axios";
 const FileUpload = () => {
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [Vin, setVin] = useState(null);
   const url = "https://localhost:7189/DropFile";
   const navigate = useNavigate();
   const { userId: userId } =
     JSON.parse(localStorage.getItem("User Param")) || {};
-  const [uploadedFiles, setUploadedFiles] = useState([]);
+
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
       setUploadedFiles(acceptedFiles);
@@ -16,11 +18,17 @@ const FileUpload = () => {
       acceptedFiles.forEach((file) => {
         formData.append("formFile", file);
         formData.append("userId", userId);
+        formData.append("Vin", Vin);
       });
+      console.log(formData.get("Vin"));
       axios
-        .post(url, formData)
+        .post(url, formData, {
+          params: {
+            Vin: formData,
+          },
+        })
         .then((res) => {
-          if (res.status === 205) EditVin();
+          if (res.status === 205) setVin(EditVin());
           if (res.status === 200) navigate(`/${res.data}`);
         })
         .catch((error) => {
