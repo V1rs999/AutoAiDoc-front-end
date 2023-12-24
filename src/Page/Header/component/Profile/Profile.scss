@@ -1,20 +1,18 @@
 .profile{
   position: relative;
-  top: 1px;
   z-index: 10;
   cursor: pointer;
+
+  margin: 2px 0;
 }
 .ImgProfile{
   display: flex;
   align-content: center;
-  width: 2.1vw;
-  margin: 3px 0;
 }
-
 .circle{
   position: absolute;
   top: 7px;
-  right: 1px;
+  right: 7px;
   width: 5px;
   height: 5px;
   border-radius: 50%;

@@ -20,6 +20,7 @@ export default function Search() {
   return (
     <form onSubmit={handleSearch} className="search">
       <input
+        className={"input-search"}
         type="text"
         placeholder="search..."
         value={searchValue}

@@ -1,18 +1,27 @@
 import "./ListOFError.scss";
-import output from "../../data/output.json";
 import ErrorRender from "./components/ErrorRender/ErrorRender.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function ListOFError() {
+  const [list, setList] = useState([]);
   const [numOfError, setnumOfError] = useState(0);
   const url = "https://localhost:7189/ListOFError";
-  axios
-    .post(url)
-    .then((res) => console.log(res.data))
-    .catch((error) => {
-      console.error(error);
-    });
+  useEffect(() => {
+    axios
+      .get(url, {
+        params: {
+          Vin: localStorage.getItem("Vin"),
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setList(res.data.errors);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <section className="List">
       <div className="List-contents">
@@ -21,7 +30,7 @@ function ListOFError() {
         <span className="numOfError">{numOfError}</span>
         <div className="hr" />
       </div>
-      <ErrorRender output={output} setnumOfError={setnumOfError} />
+      <ErrorRender output={list} setnumOfError={setnumOfError} />
     </section>
   );
 }

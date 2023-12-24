@@ -18,6 +18,7 @@ import Header from "./Page/Header/Header.jsx";
 import ListOFError from "./Page/ListOFError/ListOFError.jsx";
 import Registration from "./Page/Registration/Registration.jsx";
 import Welcome from "./Page/Welcome/Welcome.jsx";
+import PersonalSet from "./Page/PersonalSet/PersonalSet.jsx";
 import { RequireAuth } from "./hoc/RequireAuth.jsx";
 
 const Root = () => {
@@ -60,6 +61,14 @@ const router = createBrowserRouter(
         element={
           <RequireAuth>
             <ListOFError />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/personalSet"
+        element={
+          <RequireAuth>
+            <PersonalSet />
           </RequireAuth>
         }
       />

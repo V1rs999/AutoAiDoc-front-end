@@ -20,7 +20,6 @@ const FileUpload = () => {
         formData.append("userId", userId);
         formData.append("Vin", Vin);
       });
-      console.log(formData.get("Vin"));
       axios
         .post(url, formData, {
           params: {
@@ -29,7 +28,8 @@ const FileUpload = () => {
         })
         .then((res) => {
           if (res.status === 205) setVin(EditVin());
-          if (res.status === 200) navigate(`/${res.data}`);
+          if (res.status === 200) navigate(`/${res.data.page}`);
+          localStorage.setItem("Vin", res.data.vin);
         })
         .catch((error) => {
           console.error("Error uploading files:", error);

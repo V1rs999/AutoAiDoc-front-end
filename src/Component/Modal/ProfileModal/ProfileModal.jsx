@@ -5,7 +5,10 @@ import axios from "axios";
 
 export default function ProfileModal({ onDestroy }) {
   const closeWnd = (event) => {
-    if (event.target.className === "modal-profile") {
+    if (
+      event.target.className === "modal-profile" ||
+      event.target.className === "profile-a"
+    ) {
       onDestroy(event);
     }
   };
@@ -30,13 +33,13 @@ export default function ProfileModal({ onDestroy }) {
         <div className="hr-profile"></div>
         <nav className="profile-modal-nav">
           <h2 className="profile-modal-item">
-            <Link className="profile-a" to="#">
-              My car
+            <Link className="profile-a" to="/personalSet">
+              Profile Setting
             </Link>
           </h2>
           <h2 className="profile-modal-item">
-            <Link className="profile-a" to="/listoferror">
-              List of error
+            <Link className="profile-a" to="/dropfile" onClick={closeWnd}>
+              Drop File
             </Link>
           </h2>
           <h2 className="profile-modal-item">

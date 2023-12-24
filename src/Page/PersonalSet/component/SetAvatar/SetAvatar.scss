@@ -1,0 +1,53 @@
+.Avatar-wrapper{
+  width: 574.49px;
+  height: 80px;
+
+  border: 1px #00ADB5 solid;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px #00ADB5;
+  display: flex;
+  justify-content: space-around;
+}
+.Avatar-content{
+  width: 400px;
+  display: flex;
+  align-items: center;
+}
+.nickname,.ImgProfile{
+  margin: 0 5px;
+}
+.nickname{
+  display: flex;
+  align-items: center;
+
+  color: #FFF;
+  font-size: 22px;
+  font-weight: 400;
+}
+.ImgProfile {
+
+  width: 50px;
+  height: 50px;
+}
+.butt-div-change{
+  display: flex;
+  align-items: center;
+}
+.changeImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+
+
+  width: 137.66px;
+  height: 35.77px;
+
+  color: rgba(238, 238, 238, 0.93);
+  font-size: 16px;
+  font-weight: 400;
+
+
+  border-radius: 9px;
+  background: #00ADB5;
+}

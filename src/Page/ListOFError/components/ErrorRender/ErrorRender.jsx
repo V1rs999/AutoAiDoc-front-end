@@ -22,10 +22,8 @@ export default function ErrorRender({ output, setnumOfError }) {
       {sortedOutput.map((item, index) => (
         <div className="List-item" key={index}>
           <div className="Item-content">
-            <span className="codeOfError">{Object.keys(item)}</span>
-            <p className="descriptionOfError">{`Статус: ”${
-              item[Object.keys(item)]
-            }"`}</p>
+            <span className="codeOfError">{item.code}</span>
+            <p className="descriptionOfError">{`Статус: ”${item.description}"`}</p>
             <div className="squreButt">
               <img src={squreButt} alt="squreButt" />
             </div>
