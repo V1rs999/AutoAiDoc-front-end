@@ -20,6 +20,8 @@ import Registration from "./Page/Registration/Registration.jsx";
 import Welcome from "./Page/Welcome/Welcome.jsx";
 import PersonalSet from "./Page/PersonalSet/PersonalSet.jsx";
 import { RequireAuth } from "./hoc/RequireAuth.jsx";
+import MyCar from "./Page/MyCar/MyCar.jsx";
+import { RequireVin } from "./hoc/RequireVin.jsx";
 
 const Root = () => {
   if (
@@ -60,7 +62,9 @@ const router = createBrowserRouter(
         path="/listoferror"
         element={
           <RequireAuth>
-            <ListOFError />
+            <RequireVin>
+              <ListOFError />
+            </RequireVin>
           </RequireAuth>
         }
       />
@@ -69,6 +73,16 @@ const router = createBrowserRouter(
         element={
           <RequireAuth>
             <PersonalSet />
+          </RequireAuth>
+        }
+      />{" "}
+      <Route
+        path="/mycar"
+        element={
+          <RequireAuth>
+            <RequireVin>
+              <MyCar />
+            </RequireVin>
           </RequireAuth>
         }
       />

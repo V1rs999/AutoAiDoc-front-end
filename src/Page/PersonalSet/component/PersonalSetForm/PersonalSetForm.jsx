@@ -1,8 +1,26 @@
 import "./PersonalSetForm.scss";
 import { PersonalSetSchema } from "../../../../schemas/index.js";
 import { useFormik } from "formik";
+import { useEffect, useState } from "react";
+import axios from "axios";
 export default function PersonalSetForm() {
-  const onSubmit = async (values, actions) => {};
+  const [account, setAccount] = useState(null);
+  const { userId } = JSON.parse(localStorage.getItem("User Param")) || {};
+  const onSubmit = async (values, actions) => {
+    const url = "https://localhost:7189/Account";
+    console.log(values);
+    axios
+      .post(url, values)
+      .then((response) => {
+        console.log("POST request successful!");
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error making POST request:", error);
+      });
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // actions.resetForm();
+  };
 
   const {
     values,
@@ -14,6 +32,7 @@ export default function PersonalSetForm() {
     handleSubmit,
   } = useFormik({
     initialValues: {
+      userId,
       firstName: "",
       lastName: "",
       userName: "",
@@ -24,6 +43,19 @@ export default function PersonalSetForm() {
     validationSchema: PersonalSetSchema,
     onSubmit,
   });
+
+  useEffect(() => {
+    let url = `https://localhost:7189/Account?userId=${userId}`;
+
+    axios
+      .get(url)
+      .then((res) => {
+        setAccount(res.data); // Set the fetched data to 'acc'
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <form
       className="PersonalSet-form"
@@ -47,7 +79,7 @@ export default function PersonalSetForm() {
                 id="firstName"
                 type="text"
                 autoComplete="true"
-                placeholder=""
+                placeholder={`${account ? account.FirstName : ""}`}
                 onBlur={handleBlur}
               />
             </div>
@@ -72,7 +104,7 @@ export default function PersonalSetForm() {
                 id="lastName"
                 type="text"
                 autoComplete="true"
-                placeholder=""
+                placeholder={`${account ? account.LastName : ""}`}
                 onBlur={handleBlur}
               />
             </div>
@@ -97,7 +129,7 @@ export default function PersonalSetForm() {
                 id="userName"
                 type="text"
                 autoComplete="true"
-                placeholder=""
+                placeholder={`${account ? account.UserName : ""}`}
                 onBlur={handleBlur}
               />
             </div>
@@ -124,7 +156,7 @@ export default function PersonalSetForm() {
                 id="phone"
                 type="tel"
                 autoComplete="true"
-                placeholder=""
+                placeholder={`${account ? account.PhoneNumber : ""}`}
                 onBlur={handleBlur}
               />
             </div>
@@ -149,7 +181,7 @@ export default function PersonalSetForm() {
                 id="emailR"
                 type="email"
                 autoComplete="true"
-                placeholder=""
+                placeholder={`${account ? account.Email : ""}`}
                 onBlur={handleBlur}
               />
             </div>
@@ -171,10 +203,11 @@ export default function PersonalSetForm() {
               <input
                 id="passwordR"
                 type="password"
-                placeholder=""
+                placeholder={`******`}
                 value={values.passwordR}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                disabled={account && account.auth_Google}
               />
             </div>
             <div className="form-passwordR-error">

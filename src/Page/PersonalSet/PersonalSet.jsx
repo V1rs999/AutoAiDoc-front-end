@@ -3,9 +3,6 @@ import PersonalSetImg from "../../../public/unsplash_LaZ6LlfVZ4Q.png";
 import SetAvatar from "./component/SetAvatar/SetAvatar.jsx";
 import PersonalSetForm from "./component/PersonalSetForm/PersonalSetForm.jsx";
 export default function PersonalSet() {
-  const { userId: userId } =
-    JSON.parse(localStorage.getItem("User Param")) || {};
-  console.log(userId);
   return (
     <section className={"PersonalSet"}>
       <section className={"PersonalSet-wrapper"}>

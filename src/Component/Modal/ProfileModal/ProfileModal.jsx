@@ -2,8 +2,15 @@ import "./ProfileModal.scss";
 import ImgProfile from "../../../../public/Ellipse 4.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import EditVin from "../../tools/EditVin/EditVin.jsx";
+import { useEffect, useState } from "react";
 
 export default function ProfileModal({ onDestroy }) {
+  const [profileImg, setProfileImg] = useState("");
+  useEffect(() => {
+    const { imageUrl } = JSON.parse(localStorage.getItem("User Param")) || {};
+    setProfileImg(imageUrl);
+  }, [profileImg]);
   const closeWnd = (event) => {
     if (
       event.target.className === "modal-profile" ||
@@ -26,7 +33,12 @@ export default function ProfileModal({ onDestroy }) {
     <div onClick={closeWnd} className="modal-profile">
       <div className="modal-content-profile">
         <div className="profile">
-          <img className="profile-img" src={ImgProfile} alt="alt" />
+          <img
+            className="profile-img"
+            src={`${profileImg !== undefined ? profileImg : ImgProfile}`}
+            width={"50px"}
+            alt="alt"
+          />
           <div className="profile-circle"></div>
           <span className="profile-name">{username}</span>
         </div>
@@ -40,6 +52,11 @@ export default function ProfileModal({ onDestroy }) {
           <h2 className="profile-modal-item">
             <Link className="profile-a" to="/dropfile" onClick={closeWnd}>
               Drop File
+            </Link>
+          </h2>{" "}
+          <h2 className="profile-modal-item">
+            <Link className="profile-a" to="#" onClick={EditVin}>
+              Edit Vin
             </Link>
           </h2>
           <h2 className="profile-modal-item">

@@ -128,27 +128,27 @@ export default function Registration() {
                   )}
                 </div>
               </div>
-              <div className="form-confirmPassword-input">
+              <div className="form-confirmPassword">
                 <div
-                  className={`form-input-confirmPassword ${
+                  className={`form-confirmPassword-input ${
                     errors.confirmPassword && touched.confirmPassword
                       ? "input-error"
                       : ""
                   }`}
                 >
-                  <label htmlFor="confirmPassword"></label>
+                  <label htmlFor="password"></label>
                   <input
                     id="confirmPassword"
                     type="password"
-                    placeholder="confirm Password"
+                    placeholder="Confirm Password"
                     value={values.confirmPassword}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
                 </div>
                 <div className="form-confirmPassword-error">
-                  {errors.password && touched.password && (
-                    <p className="error">{errors.password}</p>
+                  {errors.confirmPassword && touched.confirmPassword && (
+                    <p className="error">{errors.confirmPassword}</p>
                   )}
                 </div>
               </div>

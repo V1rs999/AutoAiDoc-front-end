@@ -1,0 +1,58 @@
+.myCar-wrapper{
+  margin-top: 80px ;
+  height: 80dvh;
+  width: 85svw;
+  display: flex;
+  justify-content: space-between;
+}
+.myCar-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 70%;
+}
+.myCar-content-image {
+  width: 320px;
+  height: 507px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myCar-image {
+  width: auto;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.myCar-image:hover {
+  transform: scale(1.2);
+}
+
+.myCar-descrition{
+  display: flex;
+  flex-grow: 1;
+  margin-left: 107px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 24px;
+  font-weight: 200;
+}
+.myCar-descrition-title{
+  display: flex;
+  flex-grow: 1;
+  color: rgb(255, 255, 255);
+  font-weight: 200;
+}
+.wait-for-res{
+  display: flex;
+  height: 100svh;
+  width: 100svw;
+  align-items: center;
+  justify-content: center;
+  p{
+    font-size: 24px;
+    color: #FFFFFF;
+  }
+}

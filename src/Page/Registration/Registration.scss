@@ -18,7 +18,7 @@
 .registration-credentials {
   display: flex;
   justify-content: flex-start;
-  margin: 0 auto;
+  margin: 10px auto;
   flex-wrap: wrap;
   width: 343px;
 }
@@ -33,18 +33,11 @@
   flex-direction: column;
   justify-content: center;
   width: 343px;
-  height: 500px;
-}
+  height: 100%;
 
-.form-username-input, .form-confirmPassword-input {
-  border-radius: 10px;
-  border: 2px solid #000000;
-  background: #F8F8F8;
-  height: 38px;
 }
 
 .form-username-error .form-confirmPassword-error {
-  margin-left: 5px;
 }
 
 .registration-form-submitBtn {
@@ -68,19 +61,17 @@
 #username::placeholder, #confirmPassword::placeholder{
   color: #C7C7C7;
 }
-#username, #confirmPassword{
-  padding-left: 40px;
-}
 #username{
   background: url("../../../public/mdi_user-circle-outline.png") no-repeat ;
-  background-position-x: 10px;
-  background-position-y: center;
 }
 #confirmPassword{
   background: url("../../../public/mdi_password-outline.svg") no-repeat ;
-  background-position-x: 10px;
-  background-position-y: center;
 }
 #registration-form-input{
   margin-bottom: 15px;
 }
+#username, #confirmPassword{
+   padding-left: 40px;
+   background-position-x: 10px;
+   background-position-y: center;
+ }

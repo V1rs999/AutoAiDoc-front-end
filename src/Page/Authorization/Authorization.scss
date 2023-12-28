@@ -62,7 +62,7 @@
 .form-password {
 }
 
-.form-input-password, .form-email-input {
+.form-input-password, .form-email-input,.form-username-input, .form-confirmPassword-input {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -218,14 +218,12 @@
 }
 #email{
   background: url("../../../public/ic_outline-email (1).svg") no-repeat ;
-  background-position-x: 10px;
-  background-position-y: center;
 }
 #password{
   background: url("../../../public/mdi_password-outline.svg") no-repeat ;
-  background-position-x: 10px;
-  background-position-y: center;
 }
 #email, #password{
   padding-left: 40px;
+  background-position-x: 10px;
+  background-position-y: center;
 }
