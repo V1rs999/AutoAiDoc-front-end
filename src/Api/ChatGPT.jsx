@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
@@ -9,9 +10,46 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const App = () => {
+  const location = useLocation();
+  const ERROR_DESCRIPTION = new URLSearchParams(location.search).get(
+    "description"
+  );
+  const ERROR_CODE = new URLSearchParams(location.search).get("code");
+
+  useEffect(() => {
+    const initialRequest = async () => {
+      const initialMessage = {
+        message: `Hello, I need your advice in repairing my car. I've read my car with a special tool and I have an error code "${ERROR_CODE}" and description "${ERROR_DESCRIPTION}". Can you provide step-by-step instructions for the repair?`,
+        direction: "outgoing",
+        sender: "user",
+      };
+
+      setMessages((prevMessages) => [...prevMessages, initialMessage]);
+      setIsTyping(true);
+
+      try {
+        const response = await processMessageToChatGPT([initialMessage]);
+        const content = response.choices[0]?.message?.content;
+        if (content) {
+          const chatGPTResponse = {
+            message: content,
+            sender: "ChatGPT",
+          };
+          setMessages((prevMessages) => [...prevMessages, chatGPTResponse]);
+        }
+      } catch (error) {
+        console.error("Error processing message:", error);
+      } finally {
+        setIsTyping(false);
+      }
+    };
+
+    initialRequest();
+  }, []);
+
   const [messages, setMessages] = useState([
     {
       message: "Hello, I'm ChatGPT! Ask me anything!",
@@ -57,7 +95,11 @@ const App = () => {
     const apiRequestBody = {
       model: "gpt-3.5-turbo-1106",
       messages: [
-        { role: "system", content: "I'm a Student using ChatGPT for learning" },
+        {
+          role: "system",
+          content:
+            "I own a car with some bugs. Give me step-by-step instructions on how to repair the car ",
+        },
         ...apiMessages,
       ],
     };
@@ -76,14 +118,28 @@ const App = () => {
 
   return (
     <div className="App">
-      <div style={{ position: "relative", height: "800px", width: "700px" }}>
-        <MainContainer>
-          <ChatContainer>
+      <div
+        style={{
+          position: "relative",
+          height: "780px",
+          width: "99.8svw",
+          top: "9.5%",
+          backgroundColor: "#222831",
+        }}
+      >
+        <MainContainer
+          style={{ backgroundColor: "#222831", border: "#222831" }}
+        >
+          <ChatContainer style={{ backgroundColor: "#222831", color: "white" }}>
             <MessageList
+              style={{ backgroundColor: "#222831", color: "white" }}
               scrollBehavior="smooth"
               typingIndicator={
                 isTyping ? (
-                  <TypingIndicator content="ChatGPT is typing" />
+                  <TypingIndicator
+                    style={{ width: "100%", backgroundColor: "#222831" }}
+                    content="ChatGPT is typing"
+                  />
                 ) : null
               }
             >

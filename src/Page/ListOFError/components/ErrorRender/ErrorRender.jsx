@@ -1,6 +1,9 @@
 import "./ErrorRender.scss";
 import squreButt from "../../../../../public/squre.svg";
 import { useEffect } from "react";
+import ChatGPT from "../../../../Api/ChatGPT.jsx";
+import { Link } from "react-router-dom";
+import chatGPT from "../../../../Api/ChatGPT.jsx";
 
 export default function ErrorRender({ output, setnumOfError }) {
   const arr = ["P", "B", "C", "U"];
@@ -24,9 +27,14 @@ export default function ErrorRender({ output, setnumOfError }) {
           <div className="Item-content">
             <span className="codeOfError">{item.code}</span>
             <p className="descriptionOfError">{`Статус: ”${item.description}"`}</p>
-            <div className="squreButt">
+            <Link
+              to={`/ChatGPT?description=${encodeURIComponent(
+                item.description
+              )}&code=${encodeURIComponent(item.code)}`}
+              className="squreButt"
+            >
               <img src={squreButt} alt="squreButt" />
-            </div>
+            </Link>
           </div>
         </div>
       ))}

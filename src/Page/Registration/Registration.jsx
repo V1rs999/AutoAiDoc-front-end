@@ -20,7 +20,7 @@ export default function Registration() {
         navigate("/authorization");
       })
       .catch((error) => {
-        console.error("Error making POST request:", error);
+        alert(`Error making POST request: ${error.response.data}`);
       });
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();

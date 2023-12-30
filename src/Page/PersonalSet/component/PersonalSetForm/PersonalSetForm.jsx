@@ -6,9 +6,9 @@ import axios from "axios";
 export default function PersonalSetForm() {
   const [account, setAccount] = useState(null);
   const { userId } = JSON.parse(localStorage.getItem("User Param")) || {};
+
   const onSubmit = async (values, actions) => {
     const url = "https://localhost:7189/Account";
-    console.log(values);
     axios
       .post(url, values)
       .then((response) => {
@@ -16,10 +16,11 @@ export default function PersonalSetForm() {
         console.log(response.data);
       })
       .catch((error) => {
-        console.error("Error making POST request:", error);
+        console.log(error);
+        alert(`Error making POST request: ${error.response.data}`);
       });
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    // actions.resetForm();
+    actions.resetForm();
   };
 
   const {
@@ -53,7 +54,7 @@ export default function PersonalSetForm() {
         setAccount(res.data); // Set the fetched data to 'acc'
       })
       .catch((error) => {
-        console.error(error);
+        alert(`Error making POST request: ${error.response.data}`);
       });
   }, []);
   return (
@@ -203,11 +204,10 @@ export default function PersonalSetForm() {
               <input
                 id="passwordR"
                 type="password"
-                placeholder={`******`}
+                placeholder={``}
                 value={values.passwordR}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                disabled={account && account.auth_Google}
               />
             </div>
             <div className="form-passwordR-error">
@@ -225,6 +225,7 @@ export default function PersonalSetForm() {
             style={{ fontSize: "24px" }}
             disabled={isSubmitting}
             type="submit"
+            onClick={() => window.location.reload()}
           >
             Update
           </button>

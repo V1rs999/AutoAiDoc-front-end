@@ -32,7 +32,7 @@ const FileUpload = () => {
           localStorage.setItem("Vin", res.data.vin);
         })
         .catch((error) => {
-          console.error("Error uploading files:", error);
+          alert(`Error making POST request: ${error.response.data}`);
         });
     },
     multiple: false,

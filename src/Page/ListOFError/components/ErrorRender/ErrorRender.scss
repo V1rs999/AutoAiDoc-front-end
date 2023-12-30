@@ -22,10 +22,12 @@
   font-weight: 200;
 }
 .squreButt{
+  margin-left: 5px;
   display: flex;
   height: 100%;
   align-items: center;
+  transform: rotate(-90deg);
 }
 .codeOfError{
-  min-width: 65px;
+  min-width: 100px;
 }

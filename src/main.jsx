@@ -22,6 +22,7 @@ import PersonalSet from "./Page/PersonalSet/PersonalSet.jsx";
 import { RequireAuth } from "./hoc/RequireAuth.jsx";
 import MyCar from "./Page/MyCar/MyCar.jsx";
 import { RequireVin } from "./hoc/RequireVin.jsx";
+import ChatGPT from "./Api/ChatGPT.jsx";
 
 const Root = () => {
   if (
@@ -75,13 +76,23 @@ const router = createBrowserRouter(
             <PersonalSet />
           </RequireAuth>
         }
-      />{" "}
+      />
       <Route
         path="/mycar"
         element={
           <RequireAuth>
             <RequireVin>
               <MyCar />
+            </RequireVin>
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/ChatGPT"
+        element={
+          <RequireAuth>
+            <RequireVin>
+              <ChatGPT />
             </RequireVin>
           </RequireAuth>
         }

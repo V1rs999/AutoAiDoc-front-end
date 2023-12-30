@@ -39,7 +39,6 @@ export default function ProfileModal({ onDestroy }) {
             width={"50px"}
             alt="alt"
           />
-          <div className="profile-circle"></div>
           <span className="profile-name">{username}</span>
         </div>
         <div className="hr-profile"></div>
