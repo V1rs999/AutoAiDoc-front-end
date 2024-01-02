@@ -9,18 +9,28 @@ export default function PersonalSetForm() {
 
   const onSubmit = async (values, actions) => {
     const url = "https://localhost:7189/Account";
+
     axios
       .post(url, values)
       .then((response) => {
         console.log("POST request successful!");
         console.log(response.data);
+
+        const newUserName =
+          response.data.userName ||
+          values.userName ||
+          (account ? account.UserName : "");
+        const userParam = JSON.parse(localStorage.getItem("User Param")) || {};
+        userParam.userName = newUserName;
+        localStorage.setItem("User Param", JSON.stringify(userParam));
+
+        actions.resetForm();
+        window.location.reload();
       })
       .catch((error) => {
         console.log(error);
         alert(`Error making POST request: ${error.response.data}`);
       });
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    actions.resetForm();
   };
 
   const {
@@ -225,7 +235,6 @@ export default function PersonalSetForm() {
             style={{ fontSize: "24px" }}
             disabled={isSubmitting}
             type="submit"
-            onClick={() => window.location.reload()}
           >
             Update
           </button>

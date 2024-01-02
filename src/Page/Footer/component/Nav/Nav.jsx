@@ -6,7 +6,7 @@ export default function Nav() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Додає плавність прокрутки
+      behavior: "smooth",
     });
   };
 

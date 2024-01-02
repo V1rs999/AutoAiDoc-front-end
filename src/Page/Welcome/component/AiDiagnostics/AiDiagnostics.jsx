@@ -4,7 +4,7 @@ import backgeoundButt from "../../../../../public/modern-automobile-mechanic-com
 export default function AiDiagnostics() {
   return (
     <div className="AiDiagnostics-div">
-      <Link className="AiDiagnostics-a" to="/listoferror">
+      <Link className="AiDiagnostics-a" to="/ChatGPT">
         <span className="AiDiagnostics-span">AiDiagnostics</span>
         <img src={backgeoundButt} className="AiDiagnostics-img" alt="" />
       </Link>

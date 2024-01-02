@@ -23,6 +23,7 @@ export default function Search() {
         className={"input-search"}
         type="text"
         placeholder="search..."
+        target="_blank"
         value={searchValue}
         onChange={handleChange}
       />

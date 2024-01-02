@@ -10,7 +10,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const App = () => {
   const location = useLocation();

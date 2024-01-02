@@ -31,7 +31,6 @@ export default function SetAvatar() {
         setProfileImg(newImageUrl); // Оновлення зображення відображенням відвантаженого зображення
         const userParam = JSON.parse(localStorage.getItem("User Param")) || {};
         userParam.imageUrl = newImageUrl; // Оновлення URL зображення в об'єкті користувача
-        userParam.userName = newUserName; // Update username
         localStorage.setItem("User Param", JSON.stringify(userParam)); // Оновлення localStorage з новим URL зображення
         window.location.reload();
       })
