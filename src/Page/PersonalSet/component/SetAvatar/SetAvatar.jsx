@@ -24,8 +24,6 @@ export default function SetAvatar() {
         },
       })
       .then((response) => {
-        console.log("Файл успішно відправлено на сервер");
-        console.log(response.data);
         const newUserName = response.data.username || username;
         const newImageUrl = URL.createObjectURL(file);
         setProfileImg(newImageUrl); // Оновлення зображення відображенням відвантаженого зображення

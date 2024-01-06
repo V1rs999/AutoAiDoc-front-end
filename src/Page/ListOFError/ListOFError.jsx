@@ -15,7 +15,6 @@ function ListOFError() {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setList(res.data.errors);
       })
       .catch((error) => {

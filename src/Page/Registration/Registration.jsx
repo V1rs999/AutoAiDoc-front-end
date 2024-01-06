@@ -11,8 +11,6 @@ export default function Registration() {
   const navigate = useNavigate();
   const onSubmit = async (values, actions) => {
     const url = "https://localhost:7189/Registration";
-    console.log(values);
-    console.log(actions);
     axios
       .post(url, values)
       .then((response) => {

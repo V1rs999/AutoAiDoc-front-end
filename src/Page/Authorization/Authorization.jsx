@@ -11,13 +11,9 @@ export default function Authorization() {
   const navigate = useNavigate();
   const onSubmit = async (values, actions) => {
     const url = "https://localhost:7189/Authorization";
-    console.log(values);
-    console.log(actions);
     axios
       .post(url, values)
       .then((response) => {
-        console.log("POST request successful!");
-        console.log(response.data);
         navigate(`/${response.data}`);
       })
       .catch((error) => {

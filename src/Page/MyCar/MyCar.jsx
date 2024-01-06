@@ -14,7 +14,6 @@ export default function MyCar() {
       })
       .then((response) => {
         setCarData(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.error("Помилка отримання даних автомобіля:", error);

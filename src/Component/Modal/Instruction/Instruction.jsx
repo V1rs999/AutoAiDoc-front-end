@@ -1,5 +1,5 @@
 import "./Instruction.scss";
-import InstructionIMG from "../../../../public/10840255_4436220 1.svg";
+import InstructionIMG from "../../../../public/10840255_4436220 1 (1).svg";
 export default function Instruction({ onDestroy }) {
   const closeWnd = (event) => {
     if (event.target.className === "instruction-modal") {

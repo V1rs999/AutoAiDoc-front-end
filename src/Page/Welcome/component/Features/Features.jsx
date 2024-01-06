@@ -5,12 +5,10 @@ import SecurityImg from "../../../../../public/Rectangle 19.png";
 import SecuritySvg from "../../../../../public/TrendingUp.svg";
 import HistoryImg from "../../../../../public/Rectangle 20.png";
 import HistorySvg from "../../../../../public/Vector (1).svg";
-import { useParams } from "react-router-dom";
 
 export default function Features() {
-  const { sectionId } = useParams();
   return (
-    <section className="Features" id={`${sectionId}`}>
+    <section className="Features">
       <div className="Suggestion">
         <img src={SuggestionImg} className="Suggestion-image" alt="" />
 

@@ -13,9 +13,6 @@ export default function PersonalSetForm() {
     axios
       .post(url, values)
       .then((response) => {
-        console.log("POST request successful!");
-        console.log(response.data);
-
         const newUserName =
           response.data.userName ||
           values.userName ||
