@@ -9,7 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
-src/Api/ChatGPT.jsx
+src/Api
 dist-ssr
 *.local
 
