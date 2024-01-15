@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import EditVin from "../../tools/EditVin/EditVin.jsx";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 export default function ProfileModal({ onDestroy }) {
+  ProfileModal.propTypes = {
+    onDestroy: PropTypes.func.isRequired,
+  };
   const [profileImg, setProfileImg] = useState("");
   useEffect(() => {
     const { imageUrl } = JSON.parse(localStorage.getItem("User Param")) || {};

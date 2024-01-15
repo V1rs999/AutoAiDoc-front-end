@@ -8,21 +8,24 @@ function ListOFError() {
   const [numOfError, setnumOfError] = useState(0);
   const url = "https://localhost:7189/ListOFError";
   useEffect(() => {
-    axios
-      .get(url, {
-        params: {
-          Vin: localStorage.getItem("Vin"),
-        },
-      })
-      .then((res) => {
-        setList(res.data.errors);
-      })
-      .catch((error) => {
+    try {
+      axios
+        .get(url, {
+          params: {
+            Vin: localStorage.getItem("Vin"),
+          },
+        })
+        .then((res) => {
+          localStorage.getItem("Vin") ? setList(res.data.errors) : "";
+        });
+    } catch {
+      (error) => {
         console.error(error);
-      });
+      };
+    }
   }, []);
   return (
-    <section className="List">
+    <section className="List" role={"ListOfError"}>
       <div className="List-contents">
         <span className="codeOfError-titile">Код помилки</span>
         <span className="status-titile">Статус</span>

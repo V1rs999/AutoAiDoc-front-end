@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Nav.scss";
 export default function Nav() {
   return (
-    <nav className="header-nav">
+    <nav className="header-nav" role={"Nav"}>
       <Link className="header-link" to="/dropfile">
         <span className="header-nav-item">Drop File</span>
       </Link>

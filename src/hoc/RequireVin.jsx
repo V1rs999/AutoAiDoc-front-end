@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const RequireVin = ({ children }) => {
+  RequireVin.propTypes = {
+    children: PropTypes.func.isRequired,
+  };
   const [isTokenValid, setTokenValid] = useState(true);
 
   useEffect(() => {

@@ -1,11 +1,14 @@
 import "./ErrorRender.scss";
 import squreButt from "../../../../../public/squre.svg";
 import { useEffect } from "react";
-import ChatGPT from "../../../../Api/ChatGPT.jsx";
 import { Link } from "react-router-dom";
-import chatGPT from "../../../../Api/ChatGPT.jsx";
+import PropTypes from "prop-types";
 
 export default function ErrorRender({ output, setnumOfError }) {
+  ErrorRender.propTypes = {
+    output: PropTypes.func.isRequired,
+    setnumOfError: PropTypes.func.isRequired,
+  };
   const arr = ["P", "B", "C", "U"];
 
   const sortedOutput = [...output];
@@ -21,9 +24,13 @@ export default function ErrorRender({ output, setnumOfError }) {
   });
 
   return (
-    <>
+    <div data-testid="error-render">
       {sortedOutput.map((item, index) => (
-        <div className="List-item" key={index}>
+        <div
+          className="List-item"
+          key={index}
+          data-testid={`error-item-${index}`}
+        >
           <div className="Item-content">
             <span className="codeOfError">{item.code}</span>
             <p className="descriptionOfError">{`Статус: ”${item.description}"`}</p>
@@ -38,6 +45,6 @@ export default function ErrorRender({ output, setnumOfError }) {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }

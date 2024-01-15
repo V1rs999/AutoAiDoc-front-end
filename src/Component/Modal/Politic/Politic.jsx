@@ -1,7 +1,11 @@
 import "./Politic.scss";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function Politic({ onDestroy }) {
+  Politic.propTypes = {
+    onDestroy: PropTypes.func.isRequired,
+  };
   const closeWnd = (event) => {
     if (event.target.className === "politic-modal") {
       onDestroy(event);

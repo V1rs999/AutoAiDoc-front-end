@@ -10,4 +10,9 @@ export default defineConfig({
   preview: {
     open: true,
   },
+  test: {
+    environment: "jsdom",
+    globals: true,
+    setupFiles: "D:/web/AutoAiDoc/client/src/test/setup.jsx",
+  },
 });

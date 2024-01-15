@@ -4,15 +4,10 @@ import ButtListOfError from "./component/ButtListOfError/ButtListOfError.jsx";
 import ButtAiDiagnostics from "./component/AiDiagnostics/AiDiagnostics.jsx";
 import Features from "./component/Features/Features.jsx";
 import { Link, useLocation } from "react-router-dom";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 function Welcome() {
   const urlString = useLocation().search;
-  const LogOut = () => {
-    const url = "https://localhost:7189/Logout";
-    axios.post(url).then((res) => alert(`${res.data}`));
-    localStorage.clear();
-  };
 
   useEffect(() => {
     const urlParams = new URLSearchParams(urlString);
@@ -24,12 +19,12 @@ function Welcome() {
       localStorage.setItem("Token Param", tokenParam);
       localStorage.setItem("User Param", userParam);
     }
-  }, []);
+  }, [urlString]);
 
   return (
-    <div className="Main">
+    <div className="Main" role={"root"}>
       <Slider />
-      <div className="Buttons">
+      <div className="Buttons" role={"linksbutt"}>
         <ButtListOfError />
         <ButtAiDiagnostics />
       </div>
@@ -50,3 +45,10 @@ function Welcome() {
 }
 
 export default Welcome;
+
+export const LogOut = async () => {
+  const url = "https://localhost:7189/Logout";
+  const response = await axios.post(url);
+  localStorage.clear();
+  return response;
+};

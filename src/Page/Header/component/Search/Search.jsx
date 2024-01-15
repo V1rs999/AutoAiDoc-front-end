@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Search.scss";
 import searchIMG from "../../../../../public/icon_search.svg";
 
@@ -18,7 +18,7 @@ export default function Search() {
   };
 
   return (
-    <form onSubmit={handleSearch} className="search">
+    <form onSubmit={handleSearch} className="search" role={"Search"}>
       <input
         className={"input-search"}
         type="text"

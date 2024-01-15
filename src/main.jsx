@@ -1,20 +1,15 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./main.scss";
 import {
-  Outlet,
   Route,
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-  useLocation,
 } from "react-router-dom";
 import "./Null.css";
 import Authorization from "./Page/Authorization/Authorization.jsx";
 import DropFile from "./Page/DropFile/Drop.jsx";
 import ErrorPage from "./Page/Error/Error.jsx";
-import Footer from "./Page/Footer/Footer.jsx";
-import Header from "./Page/Header/Header.jsx";
 import ListOFError from "./Page/ListOFError/ListOFError.jsx";
 import Registration from "./Page/Registration/Registration.jsx";
 import Welcome from "./Page/Welcome/Welcome.jsx";
@@ -23,27 +18,7 @@ import { RequireAuth } from "./hoc/RequireAuth.jsx";
 import MyCar from "./Page/MyCar/MyCar.jsx";
 import { RequireVin } from "./hoc/RequireVin.jsx";
 import ChatGPT from "./Api/ChatGPT.jsx";
-
-const Root = () => {
-  if (
-    useLocation().pathname === "/authorization" ||
-    useLocation().pathname === "/registration"
-  ) {
-    return (
-      <div className="container">
-        <Header />
-        <Outlet />
-      </div>
-    );
-  }
-  return (
-    <div className="container">
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
-  );
-};
+import Root from "./Root";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

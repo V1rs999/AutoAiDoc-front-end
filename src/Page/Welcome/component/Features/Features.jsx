@@ -8,7 +8,7 @@ import HistorySvg from "../../../../../public/Vector (1).svg";
 
 export default function Features() {
   return (
-    <section className="Features">
+    <section className="Features" role={"Features"}>
       <div className="Suggestion">
         <img src={SuggestionImg} className="Suggestion-image" alt="" />
 

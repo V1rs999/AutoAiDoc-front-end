@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function EditVin() {
   localStorage.removeItem("Vin");
   let Vin;

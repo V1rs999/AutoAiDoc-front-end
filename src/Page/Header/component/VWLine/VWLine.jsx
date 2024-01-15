@@ -1,6 +1,10 @@
 import "./VWLine.scss";
 import VWIcon from "../../../../../public/551 1.png";
+import PropTypes from "prop-types";
 export default function VWLine({ scrolled }) {
+  VWLine.propTypes = {
+    scrolled: PropTypes.func.isRequired,
+  };
   return (
     <div className="VWLine">
       <div className={`VWLine-content sticky ${scrolled ? "scrolled" : ""}`}>

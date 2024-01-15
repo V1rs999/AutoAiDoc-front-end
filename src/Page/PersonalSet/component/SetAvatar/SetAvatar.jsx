@@ -1,6 +1,6 @@
 import ImgProfile from "../../../../../public/Ellipse 4.png";
 import "./SetAvatar.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 export default function SetAvatar() {
@@ -23,8 +23,7 @@ export default function SetAvatar() {
           "Content-Type": "multipart/form-data",
         },
       })
-      .then((response) => {
-        const newUserName = response.data.username || username;
+      .then(() => {
         const newImageUrl = URL.createObjectURL(file);
         setProfileImg(newImageUrl); // Оновлення зображення відображенням відвантаженого зображення
         const userParam = JSON.parse(localStorage.getItem("User Param")) || {};

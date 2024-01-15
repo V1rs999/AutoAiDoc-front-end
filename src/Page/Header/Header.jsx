@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./Header.scss";
 import Logo from "./component/Logo/Logo.jsx";
 import Nav from "./component/Nav/Nav.jsx";
@@ -9,6 +9,7 @@ import { useLocation } from "react-router-dom";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,19 +22,21 @@ function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   if (
-    useLocation().pathname === "/authorization" ||
-    useLocation().pathname === "/registration"
+    location.pathname === "/authorization" ||
+    location.pathname === "/registration"
   ) {
     return (
-      <div className="Header">
+      <div className="Header" role={"Header"}>
         <Logo />
         <VWLine scrolled={scrolled} />
       </div>
     );
   }
+
   return (
-    <div className="Header">
+    <div className="Header" role={"Header"}>
       <div className={`header-content sticky ${scrolled ? "scrolled" : ""}`}>
         <Logo />
         <Nav />

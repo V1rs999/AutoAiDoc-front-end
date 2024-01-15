@@ -63,7 +63,7 @@ export default function PersonalSetForm() {
       .catch((error) => {
         alert(`Error making POST request: ${error.response.data}`);
       });
-  }, []);
+  }, [userId]);
   return (
     <form
       className="PersonalSet-form"

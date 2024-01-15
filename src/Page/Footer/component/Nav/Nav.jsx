@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import React from "react";
 import "./Nav.scss";
 
 export default function Nav() {
@@ -11,7 +10,7 @@ export default function Nav() {
   };
 
   return (
-    <nav className="footer-nav">
+    <nav className="footer-nav" role={"Nav"}>
       <Link className="footer-link" to="/dropfile" onClick={scrollToTop}>
         <span className="footer-nav-item">Drop File</span>
       </Link>

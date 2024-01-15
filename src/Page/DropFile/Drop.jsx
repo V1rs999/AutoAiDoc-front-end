@@ -20,10 +20,13 @@ export default function DropFile() {
       <section
         className="modal-instruction"
         onClick={() => setModalState(true)}
+        role="button"
+        aria-label="instruction" // Додаємо атрибут aria-label
       >
         <img src={instructionImg} alt="" />
         {modalState && (
           <Instruction
+            role="dialog" // Додаємо роль "dialog" до цього елемента
             onDestroy={(event) => {
               event.stopPropagation();
               setModalState(false);
