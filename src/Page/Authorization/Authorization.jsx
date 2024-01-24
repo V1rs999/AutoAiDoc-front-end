@@ -10,7 +10,7 @@ import Politic from "../../Component/Modal/Politic/Politic.jsx";
 export default function Authorization() {
   const navigate = useNavigate();
   const onSubmit = async (values, actions) => {
-    const url = "https://autoaidoc-back-end.netlify.app/Authorization";
+    const url = "https://localhost:7189/Authorization";
     axios
       .post(url, values)
       .then((response) => {
